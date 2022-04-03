@@ -7,32 +7,32 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Stack from '@mui/material/Stack';
-import App from './App.js'
+import App from './App.js';
 
-export default function MenuBar( ) {
-  return (<div>
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            music app
-          </Typography>
-          {/* <Button variant="contained" onClick={(clicked)}>{status ? 'Log Out': 'log in'}</Button> */}
-          {/* <Button variant="contained" onClick={clicked}>{status ? 'Log Out': 'log in'}</Button> */}
-
-        </Toolbar>
-      </AppBar>
-    </Box>
-  </div>
-
+export default function MenuBar() {
+  return (
+    <div>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" component="ddf
+            {localStorage.getItem('isLogged') ? (
+              <Button variant="contained" onClick={() => localStorage.clear()}>
+                Logout
+              </Button>
+            ) : null}
+          </Toolbar>
+        </AppBar>
+      </Box>
+    </div>
   );
 }

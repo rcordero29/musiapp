@@ -1,23 +1,28 @@
+import React ,{useState} from 'react';
+
 import logo from './logo.svg';
 import './App.css';
+import Muii from './muii';
+import ButtonAppBar from './muii';
+import MenuBar from './muii';
+// import { Button } from '@mui/material';
+import Dashboard from './Dashboard';
+import LoginForm from './LoginForm';
 
 function App() {
+  const [loggedIn, setStatus]= useState(false)
+  const clicked = () => {
+    setStatus(!loggedIn)
+    console.log(loggedIn);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <MenuBar onClick={clicked} status={loggedIn} />
+        {loggedIn ? <Dashboard/>: <LoginForm clicked={clicked} status={loggedIn}/>}
+
+
+      </div>
     </div>
   );
 }
